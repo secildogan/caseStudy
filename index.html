@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Case Study</title>
+  <!-- styles -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles/utils.css" type="text/css">
+  <link rel="stylesheet" href="styles/main.css" type="text/css">
+</head>
+
+<body ng-app="caseStudyApp">
+  <section>
+    <div class="container p20">
+      <div class="row">
+        <div class="col-xs-12 upper-rectangle"></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8 col-xs-12 pr0">
+          <div class="row">
+            <div class="col-xs-3 middle-squares"></div>
+            <div class="col-xs-3 middle-squares"></div>
+            <div class="col-xs-3 middle-squares"></div>
+          </div>
+          <div class="row">
+            <div class="col-xs-3 middle-squares"></div>
+            <div class="col-xs-3 middle-squares"></div>
+            <div class="col-xs-3 middle-squares"></div>
+          </div>
+          <div class="row">
+            <div class="col-xs-3 middle-squares"></div>
+            <div class="col-xs-3 middle-squares"></div>
+            <div class="col-xs-3 middle-squares"></div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-xs-12 middle-rectangle pr0"></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 bottom-rectangle"></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container p20">
+      <div class="row">
+        <div class="quarter-circle-bottom-right col-xs-6"></div>
+        <div class="quarter-circle-bottom-left col-xs-6"></div>
+      </div>
+      <div class="row">
+        <div class="quarter-circle-top-right col-xs-6"></div>
+        <div class="quarter-circle-top-left col-xs-6"></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container p20 mt30">
+      <div class="col-xs-4 pl0">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          <div ng-repeat="(key, value) in accordionData" class="panel panel-default">
+
+            <div class="panel-heading" role="tab" id="heading-{{ $index + 1 }}">
+              <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapse-{{ $index + 1 }}" aria-expanded="true" aria-controls="collapse-{{ $index + 1 }}">
+                  <span>{{ key }}</span>
+                  <span class="pull-right" ng-show="{{ value.length }} > 1">{{ value.length }}</span>
+                </a>
+              </h4>
+            </div>
+
+            <div id="collapse-{{ $index + 1 }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-{{ $index + 1 }}">
+              <div class="list-group">
+                <a href="#" ng-repeat="sub in value" class="list-group-item list-group-item-action">{{ sub }}</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- scripts -->
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+  <!-- main.js -->
+  <script src="app.js"></script>
+
+</body>
+
+</html>
